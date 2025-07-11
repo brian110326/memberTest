@@ -1,5 +1,6 @@
 package hello.aws_practice.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -16,6 +17,7 @@ public class Member {
     private int age;
 
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "team_id")
     private Team team;
 
