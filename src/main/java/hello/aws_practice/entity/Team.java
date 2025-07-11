@@ -1,5 +1,6 @@
 package hello.aws_practice.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -18,6 +19,7 @@ public class Team {
     private String name;
 
     @OneToMany(mappedBy = "team")
+    //@JsonIgnore
     private List<Member> members = new ArrayList<>();
 
 }
